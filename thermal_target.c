@@ -69,6 +69,7 @@ static struct therm_msm_soc_type msm_soc_table[] = {
     {THERM_MSMNILE, 339},
     {THERM_MSMNILE, 362},
     {THERM_MSMNILE, 367},
+    {THERM_KONA, 356},
     {THERM_TALOS,  355},
     {THERM_SDMMAGPIE, 365},
     {THERM_MSM_8917, 303},
@@ -179,10 +180,10 @@ static struct target_therm_cfg sensor_cfg_sdmmagpie[] = {
 
 static char *cpu_sensors_trinket[] =
 {
-    "cpu-0-0-usr",
-    "cpu-0-1-usr",
-    "cpu-0-2-usr",
-    "cpu-0-3-usr",
+    "cpuss-2-usr",
+    "cpuss-2-usr",
+    "cpuss-2-usr",
+    "cpuss-2-usr",
     "cpu-1-0-usr",
     "cpu-1-1-usr",
     "cpu-1-2-usr",
@@ -688,6 +689,7 @@ ssize_t get_temperatures(thermal_module_t *module, temperature_t *list, size_t s
                 num_cfg = ARRAY_SIZE(sensor_cfg_8917);
                 break;
             case THERM_MSMNILE:
+            case THERM_KONA:
                 cfg = sensor_cfg_msmnile;
                 num_cfg = ARRAY_SIZE(sensor_cfg_msmnile);
                 break;
