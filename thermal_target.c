@@ -83,6 +83,7 @@ static struct therm_msm_soc_type msm_soc_table[] = {
     {THERM_LITO,  400},
     {THERM_LITO,  440},
     {THERM_ATOLL,  407},
+    {THERM_ATOLL,  443}, // This SOC ID is for SM7125
     {THERM_BENGAL,  417},
     {THERM_BENGAL,  444},
     {THERM_BENGAL,  445},
