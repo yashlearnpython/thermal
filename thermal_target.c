@@ -80,6 +80,8 @@ static struct therm_msm_soc_type msm_soc_table[] = {
     {THERM_MSM_8917, 386}, // This SOC ID is for QM215
     {THERM_MSM_8917, 436}, // This SOC ID is for QCM2150
     {THERM_TRINKET,  394},
+    {THERM_TRINKET,  467}, // This SOC ID is for QCM6125
+    {THERM_TRINKET,  468}, // This SOC ID is for QCS6125
     {THERM_LITO,  400},
     {THERM_LITO,  440},
     {THERM_ATOLL,  407},
@@ -88,8 +90,12 @@ static struct therm_msm_soc_type msm_soc_table[] = {
     {THERM_BENGAL,  444},
     {THERM_BENGAL,  445},
     {THERM_BENGAL,  420},
+    {THERM_BENGAL,  469}, // This SOC ID is for QCM4290
+    {THERM_BENGAL,  470}, // This SOC ID is for QCS4290
     {THERM_LAGOON,  434},
     {THERM_SCUBA,  441},
+    {THERM_SCUBA,  473}, // This SoC Id is for Agatti IOT QCM2290
+    {THERM_SCUBA,  474}, // This SoC Id is for Agatti IOT QCS2290
 };
 
 static char *gen_sensors_list[] =
