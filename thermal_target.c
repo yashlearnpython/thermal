@@ -59,6 +59,7 @@ static struct therm_msm_soc_type msm_soc_table[] = {
     {THERM_SDM_710, 336},
     {THERM_SDM_710, 337},
     {THERM_SDM_710, 393}, // This SOC ID is for SDM712
+    {THERM_SDM_710, 371},
     {THERM_QCS_605, 347},
     {THERM_SDM_632, 349},
     {THERM_SDM_632, 350},
@@ -94,6 +95,8 @@ static struct therm_msm_soc_type msm_soc_table[] = {
     {THERM_BENGAL,  470}, // This SOC ID is for QCS4290
     {THERM_LAGOON,  434},
     {THERM_SCUBA,  441},
+    {THERM_SCUBA,  473}, // This SoC Id is for Agatti IOT QCM2290
+    {THERM_SCUBA,  474}, // This SoC Id is for Agatti IOT QCS2290
 };
 
 static char *gen_sensors_list[] =
@@ -430,12 +433,19 @@ static struct target_therm_cfg sensor_cfg_kona[] = {
         .sensor_list = cpu_sensors_msmnile,
         .sens_cnt = ARRAY_SIZE(cpu_sensors_msmnile),
         .mult = 0.001,
+        .throt_thresh = 95,
+        .shutdwn_thresh = 115,
+        .vr_thresh = 95,
+        .label = "CPU",
     },
     {
         .type = DEVICE_TEMPERATURE_GPU,
         .sensor_list = &gen_sensors_list[0],
         .sens_cnt = 1,
         .mult = 0.001,
+        .throt_thresh = 95,
+        .shutdwn_thresh = 115,
+        .vr_thresh = 95,
         .label = "GPU",
     },
     {
@@ -443,6 +453,9 @@ static struct target_therm_cfg sensor_cfg_kona[] = {
         .sensor_list = &gen_sensors_list[1],
         .sens_cnt = 1,
         .mult = 0.001,
+        .throt_thresh = 45,
+        .shutdwn_thresh = 95,
+        .vr_thresh = 45,
         .label = "battery",
     },
     {
@@ -450,6 +463,9 @@ static struct target_therm_cfg sensor_cfg_kona[] = {
         .sensor_list = &gen_sensors_list[2],
         .sens_cnt = 1,
         .mult = 0.001,
+        .throt_thresh = 60,
+        .shutdwn_thresh = 95,
+        .vr_thresh = 60,
         .label = "skin",
     }
 };
@@ -620,12 +636,19 @@ static struct target_therm_cfg sensor_cfg_710[] = {
         .sensor_list = cpu_sensors_710,
         .sens_cnt = ARRAY_SIZE(cpu_sensors_710),
         .mult = 0.001,
+        .throt_thresh = 95,
+        .shutdwn_thresh = 115,
+        .vr_thresh = 95,
+        .label = "CPU",
     },
     {
         .type = DEVICE_TEMPERATURE_GPU,
         .sensor_list = &misc_sensors_710[0],
         .sens_cnt = 1,
         .mult = 0.001,
+        .throt_thresh = 95,
+        .shutdwn_thresh = 115,
+        .vr_thresh = 95,
         .label = "GPU",
     },
     {
@@ -633,6 +656,9 @@ static struct target_therm_cfg sensor_cfg_710[] = {
         .sensor_list = &misc_sensors_710[1],
         .sens_cnt = 1,
         .mult = 0.001,
+        .throt_thresh = 45,
+        .shutdwn_thresh = 95,
+        .vr_thresh = 45,
         .label = "battery",
     },
     {
@@ -640,6 +666,9 @@ static struct target_therm_cfg sensor_cfg_710[] = {
         .sensor_list = &misc_sensors_710[2],
         .sens_cnt = 1,
         .mult = 0.001,
+        .throt_thresh = 60,
+        .shutdwn_thresh = 95,
+        .vr_thresh = 60,
         .label = "skin",
     }
 };
