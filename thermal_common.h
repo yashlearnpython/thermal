@@ -44,6 +44,7 @@ enum therm_msm_id {
     THERM_MSM_8917,
     THERM_TRINKET,
     THERM_KONA,
+    THERM_KONA_IOT,
     THERM_LITO,
     THERM_ATOLL,
     THERM_BENGAL,
