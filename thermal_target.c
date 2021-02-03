@@ -433,12 +433,19 @@ static struct target_therm_cfg sensor_cfg_kona[] = {
         .sensor_list = cpu_sensors_msmnile,
         .sens_cnt = ARRAY_SIZE(cpu_sensors_msmnile),
         .mult = 0.001,
+        .throt_thresh = 95,
+        .shutdwn_thresh = 115,
+        .vr_thresh = 95,
+        .label = "CPU",
     },
     {
         .type = DEVICE_TEMPERATURE_GPU,
         .sensor_list = &gen_sensors_list[0],
         .sens_cnt = 1,
         .mult = 0.001,
+        .throt_thresh = 95,
+        .shutdwn_thresh = 115,
+        .vr_thresh = 95,
         .label = "GPU",
     },
     {
@@ -446,6 +453,9 @@ static struct target_therm_cfg sensor_cfg_kona[] = {
         .sensor_list = &gen_sensors_list[1],
         .sens_cnt = 1,
         .mult = 0.001,
+        .throt_thresh = 45,
+        .shutdwn_thresh = 95,
+        .vr_thresh = 45,
         .label = "battery",
     },
     {
@@ -453,6 +463,9 @@ static struct target_therm_cfg sensor_cfg_kona[] = {
         .sensor_list = &gen_sensors_list[2],
         .sens_cnt = 1,
         .mult = 0.001,
+        .throt_thresh = 60,
+        .shutdwn_thresh = 95,
+        .vr_thresh = 60,
         .label = "skin",
     }
 };
@@ -623,12 +636,19 @@ static struct target_therm_cfg sensor_cfg_710[] = {
         .sensor_list = cpu_sensors_710,
         .sens_cnt = ARRAY_SIZE(cpu_sensors_710),
         .mult = 0.001,
+        .throt_thresh = 95,
+        .shutdwn_thresh = 115,
+        .vr_thresh = 95,
+        .label = "CPU",
     },
     {
         .type = DEVICE_TEMPERATURE_GPU,
         .sensor_list = &misc_sensors_710[0],
         .sens_cnt = 1,
         .mult = 0.001,
+        .throt_thresh = 95,
+        .shutdwn_thresh = 115,
+        .vr_thresh = 95,
         .label = "GPU",
     },
     {
@@ -636,6 +656,9 @@ static struct target_therm_cfg sensor_cfg_710[] = {
         .sensor_list = &misc_sensors_710[1],
         .sens_cnt = 1,
         .mult = 0.001,
+        .throt_thresh = 45,
+        .shutdwn_thresh = 95,
+        .vr_thresh = 45,
         .label = "battery",
     },
     {
@@ -643,6 +666,9 @@ static struct target_therm_cfg sensor_cfg_710[] = {
         .sensor_list = &misc_sensors_710[2],
         .sens_cnt = 1,
         .mult = 0.001,
+        .throt_thresh = 60,
+        .shutdwn_thresh = 95,
+        .vr_thresh = 60,
         .label = "skin",
     }
 };
