@@ -48,7 +48,6 @@ static unsigned int sensor_cnt;
  * @return number of cpus on success or 0 on error.
  */
 size_t get_num_cpus() {
-    ALOGD("Entering %s",__func__);
     static int ncpus;
 
     if (!ncpus) {
@@ -67,7 +66,6 @@ size_t get_num_cpus() {
  * @return cpu label string on success or NULL on error.
  */
 const char *get_cpu_label(unsigned int cpu_num) {
-    ALOGD("Entering %s",__func__);
     unsigned int cpu = 0;
 
     if (cpu_label == NULL) {
@@ -323,7 +321,6 @@ static ssize_t read_temperature(int sensor_num, int type, const char *name,
         float mult, float throttling_threshold, float shutdown_threshold,
         float vr_throttling_threshold,
         temperature_t *out) {
-    ALOGD("Entering %s",__func__);
     char file_name[MAX_LENGTH];
     float temp;
     char buf[16] = {0};
@@ -362,7 +359,6 @@ static ssize_t read_temperature(int sensor_num, int type, const char *name,
  */
 ssize_t get_temperature_for_all(temperature_t *list, size_t size)
 {
-    ALOGD("Entering %s",__func__);
     size_t idx;
 
     if (sensors == NULL) {
