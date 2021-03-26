@@ -617,6 +617,63 @@ namespace implementation {
 		},
 	};
 
+	std::vector<struct target_therm_cfg>  sensor_cfg_yupik = {
+		{
+			TemperatureType::CPU,
+			cpu_sensors_lahaina,
+			"",
+			95000,
+			115000,
+			95000,
+			true,
+		},
+		{
+			TemperatureType::GPU,
+			{ "gpuss-0-usr" },
+			"GPU0",
+			95000,
+			115000,
+			95000,
+			true,
+		},
+		{
+			TemperatureType::GPU,
+			{ "gpuss-1-usr" },
+			"GPU1",
+			95000,
+			115000,
+			95000,
+			true,
+		},
+		{
+			TemperatureType::NPU,
+			{ "nspss-0-usr" },
+			"nsp0",
+			95000,
+			115000,
+			95000,
+			true,
+		},
+		{
+			TemperatureType::NPU,
+			{ "nspss-1-usr" },
+			"nsp1",
+			95000,
+			115000,
+			95000,
+			true,
+		},
+		{
+			TemperatureType::SKIN,
+			{ "quiet-therm-usr" },
+			"skin",
+			40000,
+			95000,
+			40000,
+			true,
+		},
+	};
+
 	struct target_therm_cfg bat_conf = {
 		TemperatureType::BATTERY,
 		{ "battery" },
@@ -665,6 +722,8 @@ namespace implementation {
 		{365, sensor_cfg_sdmmagpie},
 		{366, sensor_cfg_sdmmagpie},
 		{434, sensor_cfg_lito}, // lagoon
+		{435, sensor_cfg_lito},
+		{459, sensor_cfg_lito},
 		{476, sensor_cfg_lito}, // orchid
 		{339, sensor_cfg_msmnile},
 		{361, sensor_cfg_msmnile},
@@ -674,8 +733,12 @@ namespace implementation {
 		{415, lahaina_common}, // lahaina
 		{439, lahaina_common}, // lahainap
 		{456, lahaina_common}, // lahaina-atp
+		{501, lahaina_common},
+		{502, lahaina_common},
 		{450, lahaina_common}, // shima
 		{454, sensor_cfg_holi}, // holi
+		{475, sensor_cfg_yupik}, // yupik
+		{515, sensor_cfg_yupik}, // YUPIK-LTE
 	};
 
 	const std::unordered_map<int, std::vector<struct target_therm_cfg>>
@@ -684,6 +747,8 @@ namespace implementation {
 		{415, lahaina_specific}, // lahaina
 		{439, lahaina_specific}, // lahainap
 		{456, lahaina_specific}, // lahaina-atp
+		{501, lahaina_specific},
+		{502, lahaina_specific},
 		{450, shima_specific}, // shima
 	};
 
